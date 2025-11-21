@@ -341,7 +341,15 @@
       <div class="image-box">
         <img draggable="false" src="./assets/images/contact1.png" alt="">
       </div>
-    <form id="contact-form">
+    
+    <!-- FORMULAIRE AVEC FORMSUBMIT -->
+    <form id="contact-form" action="https://formsubmit.co/sa3dessebaghy@gmail.com" method="POST">
+      
+      <!-- Champs cachés pour FormSubmit -->
+      <input type="hidden" name="_subject" value="Nouveau message de portfolio!">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://sessebaghy.github.io/portfolio/merci.html">
       
       <div class="form-group">
         <div class="field">
@@ -349,7 +357,7 @@
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="email" name="email" placeholder="Email" required>
           <i class='fas fa-envelope'></i>
         </div>
         <div class="field">
@@ -363,7 +371,8 @@
         </div>
       <div class="button-area">
         <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
+          Submit <i class="fa fa-paper-plane"></i>
+        </button>
       </div>
     </form>
   </div>
@@ -434,16 +443,9 @@
 <!-- scroll reveal anim -->
 <script src="https://unpkg.com/scrollreveal"></script>
 
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
 <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
 <script src="./assets/js/script.js"></script>
 
 </body>
 </html>
-
-
