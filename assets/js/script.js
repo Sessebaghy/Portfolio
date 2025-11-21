@@ -37,29 +37,32 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
-    // <!-- emailjs to mail contact form data -->
+    // SUPPRIMER TOUTE LA PARTIE EMAILJS ET LA REMPLACER PAR :
+    // Animation pour le formulaire FormSubmit
     $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
-
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
-            }, function (error) {
-                console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
-            });
-        event.preventDefault();
+        // Animation de chargement
+        const submitButton = $(this).find('button[type="submit"]');
+        const originalText = submitButton.html();
+        
+        submitButton.html('Envoi... <i class="fas fa-spinner fa-spin"></i>');
+        submitButton.prop('disabled', true);
+        
+        // Le formulaire s'envoie automatiquement via FormSubmit
+        // On laisse faire la redirection normale
+        
+        // Réactiver le bouton après 3 secondes au cas où
+        setTimeout(() => {
+            submitButton.html(originalText);
+            submitButton.prop('disabled', false);
+        }, 3000);
     });
-    // <!-- emailjs to mail contact form data -->
 
 });
 
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Jigar Sable";
+            document.title = "Portfolio | Saad ES-SEBAGHY";
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
